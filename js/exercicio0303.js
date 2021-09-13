@@ -6,7 +6,7 @@ imagens.forEach(function (imagem) {
 });
 
 // Retorne no console apenas as imagens que começaram com a palavra imagem
-const imagensComecandoComImagem = document.querySelectorAll('[src^="img/imagem"]');
+const imagensComecandoComImagem = document.querySelectorAll('img[src^="img/imagem"]');
 console.log(imagensComecandoComImagem);
 imagensComecandoComImagem.forEach(function (imagem) {
 	console.log(imagem);

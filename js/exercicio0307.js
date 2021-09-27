@@ -4,28 +4,25 @@
 // o comportamento padrão desses links
 const linksInternos = document.querySelectorAll('a[href^="#"]');
 
-function handleClickLinksInternos (event) {
+function handleClickLinksInternos(event) {
 	event.preventDefault();
-	this.classList.add('ativo');
 	linksInternos.forEach((link) => {
-		if (link != this) {
-			link.classList.remove('ativo');
-		}
+		link.classList.remove('ativo');
 	});
+	this.classList.add('ativo');
 }
 
 linksInternos.forEach((link) => {
 	link.addEventListener('click', handleClickLinksInternos);
 });
 
-
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-const todosElementosBody = Array.from(document.body.children);
+const todosElementosBody = document.querySelectorAll('body *');
 
-function handleClickTodosElementosBody (event) {
+function handleClickTodosElementosBody(event) {
 	event.preventDefault();
-	console.log(event.target);	
+	console.log(event.currentTarget);
 }
 
 todosElementosBody.forEach((elemento) => {
@@ -34,23 +31,21 @@ todosElementosBody.forEach((elemento) => {
 
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
-function removeElemento (event) {
+function removeElemento(event) {
 	event.preventDefault();
-	event.target.remove();
+	event.currentTarget.remove();
 }
 
 todosElementosBody.forEach((elemento) => {
 	elemento.addEventListener('click', removeElemento);
 });
 
-// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+// Se o usuário clicar na tecla (t), aumente todo o texto do site.
 const todosElementosSite = document.querySelectorAll('*');
 
 function handleKeyDown(event) {
 	if (event.key === 't') {
-		todosElementosSite.forEach((elemento) => {
-			elemento.classList.toggle('aumenta-fonte');
-		});
+		document.documentElement.classList.toggle('aumenta-fonte');
 	}
 }
 

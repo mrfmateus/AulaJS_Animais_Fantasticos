@@ -179,8 +179,8 @@ body {
 	font-weight: bold;
 }
 
-.aumenta-fonte {
-	font-size: 3rem;
+html.aumenta-fonte {
+	font-size: 150%;
 }
 
 @media (max-width: 700px) {

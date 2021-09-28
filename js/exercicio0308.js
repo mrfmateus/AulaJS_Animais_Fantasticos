@@ -14,5 +14,4 @@ const primeiroDd = primeiroDtFaq.nextElementSibling;
 // Substitua o conteúdo html de .faq pelo de .animais
 const faq = document.querySelector('.faq');
 const animais = document.querySelector('.animais');
-const cloneAnimais = animais.cloneNode(true);
-document.body.replaceChild(cloneAnimais, faq);
+faq.innerHTML = animais.innerHTML;

@@ -183,7 +183,7 @@ html.aumenta-fonte {
 	font-size: 150%;
 }
 
-.js .js-tabmenu li {
+.js-tabmenu li {
 	cursor: pointer;
 }
 
@@ -191,9 +191,38 @@ html.aumenta-fonte {
 	display: none;
 }
 
-.js .js-tabcontent section.ativo {
+.js-tabcontent section.ativo {
 	display: block !important;
 	animation: show 0.5s forwards;
+}
+
+.js-accordion dt::after {
+	content: '⬎';
+	margin-left: 10px;
+}
+
+.js-accordion dt.ativo::after {
+	content: '⬏';
+	margin-left: 10px;
+}
+
+.js .js-accordion dd {
+	display: none;
+}
+
+.js .js-accordion dd.ativo {
+	display: block;
+	animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		max-height: 0;
+	} to {
+		opacity: 1;
+		max-height: 300px;
+	}
 }
 
 @keyframes show {
